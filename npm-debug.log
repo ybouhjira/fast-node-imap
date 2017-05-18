@@ -1,0 +1,102 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.10.10
+3 info using node@v6.10.2
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/youssef/Desktop/rx-imap',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/youssef/.npm/rx-imap/0.2.0/package.tgz not in flight; packing
+9 verbose correctMkdir /home/youssef/.npm correctMkdir not in flight; initializing
+10 info lifecycle rx-imap@0.2.0~prepublish: rx-imap@0.2.0
+11 silly lifecycle rx-imap@0.2.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/home/youssef/.npm/rx-imap/0.2.0/package.tgz',
+12 verbose tar pack   '/home/youssef/Desktop/rx-imap' ]
+13 verbose tarball /home/youssef/.npm/rx-imap/0.2.0/package.tgz
+14 verbose folder /home/youssef/Desktop/rx-imap
+15 verbose addLocalTarball adding from inside cache /home/youssef/.npm/rx-imap/0.2.0/package.tgz
+16 verbose correctMkdir /home/youssef/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd rx-imap@0.2.0
+18 verbose afterAdd /home/youssef/.npm/rx-imap/0.2.0/package/package.json not in flight; writing
+19 verbose correctMkdir /home/youssef/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /home/youssef/.npm/rx-imap/0.2.0/package/package.json written
+21 silly publish { name: 'rx-imap',
+21 silly publish   version: '0.2.0',
+21 silly publish   description: 'node-imap wrapper',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+21 silly publish   keywords: [ 'imap', 'node' ],
+21 silly publish   author: { name: 'ybouhjira' },
+21 silly publish   license: 'MIT',
+21 silly publish   readme: '# rx-imap\nJust a node-imap wrapper \n## Why use this\n- Fetch messages from very large mailboxes.\n- Restarts on error.\n- Fetches in parallel.\n\n## Install\n```\nnpm i rx-imap -S\n```\n\n## How to use\n```js\nconst RxImap = require(\'rx-imap\');\n\nconst imap = new RxImap({\n    instances: 32,\n    timeout: 3000,\n});\n\nconst account = {\n    user: \'seomeone@host.com\'\n    host: \'imap.host.com\',\n    password: \'password@123\',\n    port: 993\n};\n\nconst field = \'HEADER.FIELDS (REPLY-TO)\';\n\nimap.get(account, field, \'INBOX\')\n    .subscribe(x => console.log(x));\n```\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '4931f7d512e264e58ef61f412af5f5149a7fe515',
+21 silly publish   _id: 'rx-imap@0.2.0',
+21 silly publish   _shasum: 'f2e3208cc3325a20d8ca7ed70400816cdd26cbee',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name rx-imap
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'rx-imap',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'rx-imap',
+26 silly mapToRegistry   name: 'rx-imap',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/rx-imap
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /home/youssef/.npm/rx-imap/0.2.0/package.tgz
+30 verbose request uri https://registry.npmjs.org/rx-imap
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 9:39:35 PM
+33 verbose request using bearer token for auth
+34 verbose request id a07d3e8356436c82
+35 http request PUT https://registry.npmjs.org/rx-imap
+36 http 403 https://registry.npmjs.org/rx-imap
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Thu, 18 May 2017 20:39:37 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-cdg8735-CDG',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1495139977.757470,VS0,VE873',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /home/youssef/.npm/registry.npmjs.org/rx-imap on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.2.0." : rx-imap
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1048:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:969:12)
+41 verbose statusCode 403
+42 verbose pkgid rx-imap
+43 verbose cwd /home/youssef/Desktop/rx-imap
+44 error Linux 3.16.0-38-generic
+45 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.10.2
+47 error npm  v3.10.10
+48 error code E403
+49 error "You cannot publish over the previously published version 0.2.0." : rx-imap
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
