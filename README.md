@@ -1,5 +1,6 @@
 # rx-imap
 Just a node-imap wrapper 
+
 ## Why use this
 - Fetch messages from very large mailboxes.
 - Restarts on error.
