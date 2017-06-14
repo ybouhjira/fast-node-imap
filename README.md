@@ -1,4 +1,4 @@
-# rx-imap
+# fast-node-imap
 Just a node-imap wrapper 
 
 ## Why use this
